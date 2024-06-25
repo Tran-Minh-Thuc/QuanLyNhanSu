@@ -31,6 +31,7 @@ namespace QuanLyNhanSu.CT
             {
                 if (thang < 10)
                 {
+                    // hom nay toi buon
                     ngaydau = Convert.ToDateTime("01/0" + thang + "/" + nam);
                     ngaycuoi = Convert.ToDateTime("30/0" + thang + "/" + nam);
                 }
@@ -125,6 +126,12 @@ namespace QuanLyNhanSu.CT
 
             return tienthuong;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private int TienPhat(string manv, DateTime nd, DateTime nc)
         {
             tienphat = 0;
