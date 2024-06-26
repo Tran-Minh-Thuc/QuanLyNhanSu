@@ -206,5 +206,12 @@ namespace QuanLyNhanSu
             pnLoad.Controls.Clear();
             pnLoad.Controls.Add(pc);
         }
+        private void btButToan_Click(object sender, EventArgs e)
+        {
+            label3.Text = null;
+            CT.ButToan pc = new CT.ButToan();
+            pnLoad.Controls.Clear();
+            pnLoad.Controls.Add(pc);
+        }
     }
 }

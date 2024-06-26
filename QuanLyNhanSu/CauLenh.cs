@@ -861,6 +861,30 @@ namespace QuanLyNhanSu
             da.Fill(dt);
             return dt;
         }
+        public DataTable LayButToan(string ma)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlCommand cm = new SqlCommand("LayButToan", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@ma", ma);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
+        public DataTable LaySoDuDauKi(string ma)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlCommand cm = new SqlCommand("LaySoDuDauKi", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@ma", ma);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
         public SqlDataReader ThemChucVu(string macv, string tencv)
         {
             if (con.State == ConnectionState.Open)
@@ -913,6 +937,54 @@ namespace QuanLyNhanSu
             cm.Parameters.AddWithValue("@maclv", macv);
             cm.Parameters.AddWithValue("@manv", tencv);
             cm.Parameters.AddWithValue("@loai", loai);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader CapNhatButToan(int mabt, int masodudauki, string ngaychungtu, string taikhoanco, string taikhoanno, string diengiai, int tongtien)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("CapNhatButToan", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@mabt", mabt);
+            cm.Parameters.AddWithValue("@masodudauki", masodudauki);
+            cm.Parameters.AddWithValue("@ngaychungtu", ngaychungtu);
+            cm.Parameters.AddWithValue("@taikhoanco", taikhoanco);
+            cm.Parameters.AddWithValue("@taikhoanno", taikhoanno);
+            cm.Parameters.AddWithValue("@diengiai", diengiai);
+            cm.Parameters.AddWithValue("@tongtien", tongtien);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader ThemButToan(int mabt, int masodudauki, string ngaychungtu, string taikhoanco, string taikhoanno, string diengiai, int tongtien)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("ThemButToan", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@mabt", mabt);
+            cm.Parameters.AddWithValue("@masodudauki", masodudauki);
+            cm.Parameters.AddWithValue("@ngaychungtu", ngaychungtu);
+            cm.Parameters.AddWithValue("@taikhoanco", taikhoanco);
+            cm.Parameters.AddWithValue("@taikhoanno", taikhoanno);
+            cm.Parameters.AddWithValue("@diengiai", diengiai);
+            cm.Parameters.AddWithValue("@tongtien", tongtien);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader XoaButToan(int mabt)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("XoaButToan", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@mabt", mabt);
             dr = cm.ExecuteReader();
             return dr;
         }

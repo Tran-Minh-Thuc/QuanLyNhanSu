@@ -52,6 +52,12 @@
     <Compile Include="CT\BaoHiem.Designer.cs">
       <DependentUpon>BaoHiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="CT\ButToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\ButToan.Designer.cs">
+      <DependentUpon>ButToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="CT\CaLamViec.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     <Compile Include="tkCauLenh.cs" />
     <EmbeddedResource Include="CT\BaoHiem.resx">
       <DependentUpon>BaoHiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CT\ButToan.resx">
+      <DependentUpon>ButToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CT\CaLamViec.resx">
       <DependentUpon>CaLamViec.cs</DependentUpon>
