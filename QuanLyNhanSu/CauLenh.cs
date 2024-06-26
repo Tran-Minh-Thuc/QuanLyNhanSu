@@ -849,6 +849,18 @@ namespace QuanLyNhanSu
             da.Fill(dt);
             return dt;
         }
+        public DataTable LayCaLamViec(string ma)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlCommand cm = new SqlCommand("LayCaLamViec", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@ma", ma);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
         public SqlDataReader ThemChucVu(string macv, string tencv)
         {
             if (con.State == ConnectionState.Open)
@@ -859,6 +871,20 @@ namespace QuanLyNhanSu
             cm.CommandType = CommandType.StoredProcedure;
             cm.Parameters.AddWithValue("@macv", macv);
             cm.Parameters.AddWithValue("@tencv", tencv);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader ThemCaLamViec(string macv, string tencv, string loai)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("ThemCaLamViec", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@maclv", macv);
+            cm.Parameters.AddWithValue("@manv", tencv);
+            cm.Parameters.AddWithValue("@loai", loai);
             dr = cm.ExecuteReader();
             return dr;
         }
@@ -875,6 +901,21 @@ namespace QuanLyNhanSu
             dr = cm.ExecuteReader();
             return dr;
         }
+
+        public SqlDataReader CapNhatCaLamViec(string macv, string tencv, string loai)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("CapNhatCaLamViec", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@maclv", macv);
+            cm.Parameters.AddWithValue("@manv", tencv);
+            cm.Parameters.AddWithValue("@loai", loai);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
         public SqlDataReader XoaCapNhat(string macv)
         {
             if (con.State == ConnectionState.Open)
@@ -884,6 +925,18 @@ namespace QuanLyNhanSu
             SqlCommand cm = new SqlCommand("XoaCapNhat", con);
             cm.CommandType = CommandType.StoredProcedure;
             cm.Parameters.AddWithValue("@macv", macv);
+            dr = cm.ExecuteReader();
+            return dr;
+        }
+        public SqlDataReader XoaCaLamViec(string maclv)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlDataReader dr = null;
+            SqlCommand cm = new SqlCommand("XoaCaLamViec", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@maclv", maclv);
             dr = cm.ExecuteReader();
             return dr;
         }

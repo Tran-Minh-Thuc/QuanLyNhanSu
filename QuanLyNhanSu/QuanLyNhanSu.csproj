@@ -52,6 +52,12 @@
     <Compile Include="CT\BaoHiem.Designer.cs">
       <DependentUpon>BaoHiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="CT\CaLamViec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CT\CaLamViec.Designer.cs">
+      <DependentUpon>CaLamViec.cs</DependentUpon>
+    </Compile>
     <Compile Include="CT\ChucVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     <EmbeddedResource Include="CT\BaoHiem.resx">
       <DependentUpon>BaoHiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CT\CaLamViec.resx">
+      <DependentUpon>CaLamViec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CT\ChucVu.resx">
       <DependentUpon>ChucVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +289,7 @@
     </Compile>
     <EmbeddedResource Include="QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
@@ -311,6 +321,7 @@
     <EmbeddedResource Include="ThongKe\tkXemccTheoTen.resx">
       <DependentUpon>tkXemccTheoTen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CT\.editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

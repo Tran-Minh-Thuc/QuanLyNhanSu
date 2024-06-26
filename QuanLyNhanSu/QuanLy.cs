@@ -199,7 +199,12 @@ namespace QuanLyNhanSu
             pnLoad.Controls.Clear();
             pnLoad.Controls.Add(pc);
         }
-
-
+        private void btnCaLamViec_Click(object sender, EventArgs e)
+        {
+            label3.Text = null;
+            CT.CaLamViec pc = new CT.CaLamViec();
+            pnLoad.Controls.Clear();
+            pnLoad.Controls.Add(pc);
+        }
     }
 }

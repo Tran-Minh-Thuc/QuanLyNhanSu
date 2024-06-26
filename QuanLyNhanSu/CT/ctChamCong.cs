@@ -98,12 +98,28 @@ namespace QuanLyNhanSu.CT
                 lbMa.Text = dataGridView1.CurrentRow.Cells["Ma"].Value.ToString();
                 lbTen.Text = dataGridView1.CurrentRow.Cells["Ten"].Value.ToString();
                 lbTinhTrang.Text = dataGridView1.CurrentRow.Cells["TinhTrang"].Value.ToString();
+                if (dataGridView1.CurrentRow.Cells["LoaiCa"].Value == null || string.IsNullOrWhiteSpace(dataGridView1.CurrentRow.Cells["LoaiCa"].Value.ToString()))
+                {
+                    lbCaLamViec.Text = "Chưa có giá trị";
+                }
+                else
+                {
+                    lbCaLamViec.Text = dataGridView1.CurrentRow.Cells["LoaiCa"].Value.ToString();
+                }
             }
-            else if(e.ColumnIndex != 0 && dem == 0)
+            else if (e.ColumnIndex != 0 && dem == 0)
             {
                 lbMa.Text = dataGridView1.CurrentRow.Cells["Ma"].Value.ToString();
                 lbTen.Text = dataGridView1.CurrentRow.Cells["Ten"].Value.ToString();
                 lbTinhTrang.Text = "Chưa có giá trị";
+                if (dataGridView1.CurrentRow.Cells["LoaiCa"].Value == null || string.IsNullOrWhiteSpace(dataGridView1.CurrentRow.Cells["LoaiCa"].Value.ToString()))
+                {
+                    lbCaLamViec.Text = "Chưa có giá trị";
+                }
+                else
+                {
+                    lbCaLamViec.Text = dataGridView1.CurrentRow.Cells["LoaiCa"].Value.ToString();
+                }
             }
         }
 

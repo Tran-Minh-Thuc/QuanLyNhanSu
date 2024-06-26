@@ -80,6 +80,8 @@
             this.btnDoiMK = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.labelCaLamViec = new System.Windows.Forms.Label();
+            this.btnCaLamViec = new System.Windows.Forms.Button();
             this.pnLoad.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -295,6 +297,8 @@
             // 
             // tpQuanLy
             // 
+            this.tpQuanLy.Controls.Add(this.labelCaLamViec);
+            this.tpQuanLy.Controls.Add(this.btnCaLamViec);
             this.tpQuanLy.Controls.Add(this.btBaoHiem);
             this.tpQuanLy.Controls.Add(this.btPhuCap);
             this.tpQuanLy.Controls.Add(this.label23);
@@ -333,7 +337,7 @@
             // btPhuCap
             // 
             this.btPhuCap.Image = ((System.Drawing.Image)(resources.GetObject("btPhuCap.Image")));
-            this.btPhuCap.Location = new System.Drawing.Point(750, 6);
+            this.btPhuCap.Location = new System.Drawing.Point(766, 7);
             this.btPhuCap.MinimumSize = new System.Drawing.Size(70, 70);
             this.btPhuCap.Name = "btPhuCap";
             this.btPhuCap.Size = new System.Drawing.Size(75, 70);
@@ -353,7 +357,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(757, 78);
+            this.label22.Location = new System.Drawing.Point(773, 79);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(61, 15);
             this.label22.TabIndex = 1;
@@ -362,7 +366,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(626, 78);
+            this.label14.Location = new System.Drawing.Point(637, 79);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(92, 15);
             this.label14.TabIndex = 1;
@@ -371,7 +375,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(510, 78);
+            this.label13.Location = new System.Drawing.Point(534, 79);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 15);
             this.label13.TabIndex = 1;
@@ -380,7 +384,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(403, 78);
+            this.label12.Location = new System.Drawing.Point(341, 79);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 15);
             this.label12.TabIndex = 1;
@@ -389,7 +393,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(276, 78);
+            this.label11.Location = new System.Drawing.Point(232, 78);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 15);
             this.label11.TabIndex = 1;
@@ -398,7 +402,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(160, 78);
+            this.label10.Location = new System.Drawing.Point(140, 78);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 15);
             this.label10.TabIndex = 1;
@@ -416,7 +420,7 @@
             // button6
             // 
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(635, 6);
+            this.button6.Location = new System.Drawing.Point(646, 7);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(70, 70);
             this.button6.TabIndex = 0;
@@ -426,7 +430,7 @@
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(517, 6);
+            this.button5.Location = new System.Drawing.Point(541, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(70, 70);
             this.button5.TabIndex = 0;
@@ -436,7 +440,7 @@
             // btnChucVu
             // 
             this.btnChucVu.Image = ((System.Drawing.Image)(resources.GetObject("btnChucVu.Image")));
-            this.btnChucVu.Location = new System.Drawing.Point(399, 6);
+            this.btnChucVu.Location = new System.Drawing.Point(337, 7);
             this.btnChucVu.Name = "btnChucVu";
             this.btnChucVu.Size = new System.Drawing.Size(70, 70);
             this.btnChucVu.TabIndex = 0;
@@ -446,7 +450,7 @@
             // btnChamCong
             // 
             this.btnChamCong.Image = ((System.Drawing.Image)(resources.GetObject("btnChamCong.Image")));
-            this.btnChamCong.Location = new System.Drawing.Point(281, 5);
+            this.btnChamCong.Location = new System.Drawing.Point(237, 5);
             this.btnChamCong.Name = "btnChamCong";
             this.btnChamCong.Size = new System.Drawing.Size(70, 70);
             this.btnChamCong.TabIndex = 0;
@@ -456,7 +460,7 @@
             // btnNhanVien
             // 
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
-            this.btnNhanVien.Location = new System.Drawing.Point(163, 6);
+            this.btnNhanVien.Location = new System.Drawing.Point(143, 6);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(70, 70);
             this.btnNhanVien.TabIndex = 0;
@@ -602,6 +606,25 @@
             this.tabControl1.Size = new System.Drawing.Size(989, 132);
             this.tabControl1.TabIndex = 0;
             // 
+            // labelCaLamViec
+            // 
+            this.labelCaLamViec.AutoSize = true;
+            this.labelCaLamViec.Location = new System.Drawing.Point(434, 77);
+            this.labelCaLamViec.Name = "label24";
+            this.labelCaLamViec.Size = new System.Drawing.Size(84, 15);
+            this.labelCaLamViec.TabIndex = 4;
+            this.labelCaLamViec.Text = "Ca Làm Việc";
+            // 
+            // btnCaLamViec
+            // 
+            this.btnCaLamViec.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.btnCaLamViec.Location = new System.Drawing.Point(441, 5);
+            this.btnCaLamViec.Name = "btnCaLamViec";
+            this.btnCaLamViec.Size = new System.Drawing.Size(70, 70);
+            this.btnCaLamViec.TabIndex = 3;
+            this.btnCaLamViec.UseVisualStyleBackColor = true;
+            this.btnCaLamViec.Click += new System.EventHandler(this.btnCaLamViec_Click);
+            // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,5 +708,7 @@
         private System.Windows.Forms.Button btPhuCap;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label labelCaLamViec;
+        private System.Windows.Forms.Button btnCaLamViec;
     }
 }
