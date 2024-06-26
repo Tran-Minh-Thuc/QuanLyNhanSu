@@ -22,6 +22,7 @@ namespace QuanLyNhanSu.CT
         SqlDataReader dr;
         DataTable dt = new DataTable();
         int thang = DateTime.Now.Month, nam = DateTime.Now.Year, ngay = DateTime.Now.Day, luongcoban = 0, tongluong = 0, tienthuong = 0, tienphat = 0, phucap = 0, m = 0;
+        decimal thue = 0;
         string manv = null, songaylam = null, songaynghicophep = null, songaynghikhongphep = null, chucvu = null;
         private void load()
         {
@@ -31,7 +32,6 @@ namespace QuanLyNhanSu.CT
             {
                 if (thang < 10)
                 {
-                    // hom nay toi buon vai lol luon dit me
                     ngaydau = Convert.ToDateTime("01/0" + thang + "/" + nam);
                     ngaycuoi = Convert.ToDateTime("30/0" + thang + "/" + nam);
                 }
@@ -61,6 +61,7 @@ namespace QuanLyNhanSu.CT
             dt.Clear();
             dt = cl.TongLuongNV("0");
             dataGridView1.DataSource = dt;
+
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 manv = dataGridView1.Rows[i].Cells["Ma"].Value.ToString();
@@ -69,11 +70,13 @@ namespace QuanLyNhanSu.CT
                 dataGridView1.Rows[i].Cells["P"].Value = TienPhat(manv, ngaydau, ngaycuoi);
                 dataGridView1.Rows[i].Cells["PhuCap"].Value = tienPhuCap(manv, ngaycuoi);
                 tongluong = TinhLuong1(manv, songaylam, tienthuong.ToString(), tienphat.ToString(), ngaydau, ngaycuoi);
-                dataGridView1.Rows[i].Cells["TL"].Value = String.Format("{0:0,0}", tongluong);
+                thue = Decimal.Parse(tinhthue(Convert.ToInt32(tongluong)));
+                dataGridView1.Rows[i].Cells["Thue"].Value = thue;
+                dataGridView1.Rows[i].Cells["TL"].Value = String.Format("{0:0,0}", tongluong-thue);
                 //MessageBox.Show(songaylam + "\n" + tienthuong + "\n" + tienphat + "\n" + tongluong.ToString());
 
             }
-         
+
         }
         private string LaySoNgayLam(string manv, DateTime ngaydau, DateTime ngaycuoi)
         {
@@ -92,6 +95,40 @@ namespace QuanLyNhanSu.CT
                 songaynghicophep = dr.GetInt32(1).ToString();
             }
             return songaynghicophep;
+        }
+
+        private string tinhthue(int tongluong)
+        {
+            decimal thue = 0m;
+            if (tongluong <= 5000000)
+            {
+                thue = tongluong * 0.05m;
+            }
+            else if (tongluong <= 10000000)
+            {
+                thue = tongluong * 0.10m - 250000;
+            }
+            else if (tongluong <= 18000000)
+            {
+                thue = tongluong * 0.15m - 750000;
+            }
+            else if (tongluong <= 32000000)
+            {
+                thue = tongluong * 0.20m - 1650000;
+            }
+            else if (tongluong <= 52000000)
+            {
+                thue = tongluong * 0.25m - 3250000;
+            }
+            else if (tongluong <= 80000000)
+            {
+                thue = tongluong * 0.30m - 5850000;
+            }
+            else
+            {
+                thue = tongluong * 0.35m - 9850000;
+            }
+            return thue.ToString();
         }
         private string NghiCoPhep(string manv, DateTime ngaydau, DateTime ngaycuoi)
         {
