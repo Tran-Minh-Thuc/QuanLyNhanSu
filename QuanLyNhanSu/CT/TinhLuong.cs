@@ -31,7 +31,7 @@ namespace QuanLyNhanSu.CT
             {
                 if (thang < 10)
                 {
-                    // hom nay toi buon
+                    // hom nay toi buon vai lol luon dit me
                     ngaydau = Convert.ToDateTime("01/0" + thang + "/" + nam);
                     ngaycuoi = Convert.ToDateTime("30/0" + thang + "/" + nam);
                 }
