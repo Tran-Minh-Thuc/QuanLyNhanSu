@@ -65,6 +65,8 @@ namespace QuanLyNhanSu.CT
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 manv = dataGridView1.Rows[i].Cells["Ma"].Value.ToString();
+                //Console.WriteLine(manv);
+                //Console.WriteLine(LaySoNgayLam(manv, ngaydau, ngaycuoi));
                 dataGridView1.Rows[i].Cells["SNL"].Value = LaySoNgayLam(manv, ngaydau, ngaycuoi);
                 dataGridView1.Rows[i].Cells["T"].Value = TienThuong(manv, ngaydau, ngaycuoi);
                 dataGridView1.Rows[i].Cells["P"].Value = TienPhat(manv, ngaydau, ngaycuoi);
@@ -152,7 +154,7 @@ namespace QuanLyNhanSu.CT
                     
                     tien = dr.GetInt32(0);
                     ld = dr.GetString(1);
-                    if (ld == "Thưởng")
+                    if (ld == "Thuong")
                         tienthuong += tien;
                 }
             }
@@ -182,7 +184,7 @@ namespace QuanLyNhanSu.CT
 
                     tien = dr.GetInt32(0);
                     ld = dr.GetString(1);
-                    if (ld == "Phạt")
+                    if (ld == "Phat")
                         tienphat += tien;
                 }
             }

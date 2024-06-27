@@ -27,10 +27,10 @@ namespace QuanLyNhanSu.CT
         DateTime nd, nc;
         private void load()
         {
-            nd = Convert.ToDateTime("01/06/2015");
-            nc = Convert.ToDateTime("30/06/2015");
-            // nd = Convert.ToDateTime(thang + "/1" + "/" + nam);
-            // nc = Convert.ToDateTime(thang + "/30" + "/" + nam);
+            //nd = Convert.ToDateTime("01/06/2015");
+            //nc = Convert.ToDateTime("30/06/2015");
+            nd = Convert.ToDateTime("01/" + thang + "/" + nam);
+            nc = Convert.ToDateTime("30/" + thang + "/" + nam);
             txtLyDo.Enabled = false;
             txtT.Enabled = false;
             btnLuu.Enabled = false;
@@ -168,8 +168,8 @@ namespace QuanLyNhanSu.CT
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            nd = Convert.ToDateTime(cbThang.Text + "/1" + "/" + cbNam.Text);
-            nc = Convert.ToDateTime(cbThang.Text + "/30" + "/" + cbNam.Text);
+            nd = Convert.ToDateTime("01/" + cbThang.Text + "/" + cbNam.Text);
+            nc = Convert.ToDateTime("30/" + cbThang.Text + "/" + cbNam.Text);
             dt.Clear();
             dt = cl.LayNhanVienTuMaPB("0", nd, nc);
             dataGridView1.DataSource = dt;
