@@ -1025,6 +1025,20 @@ namespace QuanLyNhanSu
             da.Fill(dt);
             return dt;
         }
+
+        public DataTable LayHocVan(string ma)
+        {
+            if (con.State == ConnectionState.Open)
+                con.Close();
+            con.Open();
+            SqlCommand cm = new SqlCommand("LayHocVan", con);
+            cm.CommandType = CommandType.StoredProcedure;
+            cm.Parameters.AddWithValue("@ma", ma);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            da.Fill(dt);
+            return dt;
+        }
+
         public SqlDataReader LayBaoHiem1(string ma, string loaibh)
         {
             if (con.State == ConnectionState.Open)

@@ -64,12 +64,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtHonNhan = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTD = new System.Windows.Forms.TextBox();
             this.txtDT = new System.Windows.Forms.TextBox();
             this.txtSoCM = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.txtTD = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -160,6 +160,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtTD);
             this.panel1.Controls.Add(this.txtLuong);
             this.panel1.Controls.Add(this.txtChuc);
             this.panel1.Controls.Add(this.txtPhong);
@@ -188,7 +189,6 @@
             this.panel1.Controls.Add(this.dtpNgaySinh);
             this.panel1.Controls.Add(this.txtHonNhan);
             this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.txtTD);
             this.panel1.Controls.Add(this.txtDT);
             this.panel1.Controls.Add(this.txtSoCM);
             this.panel1.Controls.Add(this.txtTen);
@@ -461,13 +461,6 @@
             this.txtEmail.TabIndex = 11;
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
-            // txtTD
-            // 
-            this.txtTD.Location = new System.Drawing.Point(379, 201);
-            this.txtTD.Name = "txtTD";
-            this.txtTD.Size = new System.Drawing.Size(176, 20);
-            this.txtTD.TabIndex = 10;
-            // 
             // txtDT
             // 
             this.txtDT.Location = new System.Drawing.Point(379, 165);
@@ -514,6 +507,15 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // txtTD
+            // 
+            this.txtTD.FormattingEnabled = true;
+            this.txtTD.Location = new System.Drawing.Point(379, 202);
+            this.txtTD.Name = "txtTD";
+            this.txtTD.Size = new System.Drawing.Size(176, 21);
+            this.txtTD.TabIndex = 19;
+            this.txtTD.SelectedIndexChanged += new System.EventHandler(this.txtTD_SelectedIndexChanged);
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,7 +561,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtHonNhan;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTD;
         private System.Windows.Forms.TextBox txtDT;
         private System.Windows.Forms.TextBox txtSoCM;
         private System.Windows.Forms.Button btnXoa;
@@ -575,5 +576,6 @@
         private System.Windows.Forms.ComboBox txtChuc;
         private System.Windows.Forms.ComboBox txtPhong;
         private System.Windows.Forms.ComboBox txtLuong;
+        private System.Windows.Forms.ComboBox txtTD;
     }
 }

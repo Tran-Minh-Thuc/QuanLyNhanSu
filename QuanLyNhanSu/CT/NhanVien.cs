@@ -16,7 +16,10 @@ namespace QuanLyNhanSu.CT
     public partial class NhanVien : UserControl
     {
         CauLenh cl = new CauLenh();
+        CauLenh cl2 = new CauLenh();
         DataTable dt = new DataTable();
+        DataTable tdhocvan = new DataTable();
+        Dictionary<string, string> hocVanDictionary = new Dictionary<string, string>();
         SqlDataReader dr;
         string manv = null, hinh = null, macc = null, tenchucvu = null, tenphongban = null, mhd = null;
         DateTime ngay, n1, n2;
@@ -40,14 +43,28 @@ namespace QuanLyNhanSu.CT
         private void load()
         {
             dt.Clear();
+            hocVanDictionary.Clear();
+            tdhocvan = cl2.LayHocVan("0");
+            foreach (DataRow row in tdhocvan.Rows)
+            {
+                string bangCap = row["BangCap"].ToString();
+                string trinhDoHV = row["TrinhDoHV"].ToString();
+                hocVanDictionary.Add(bangCap, trinhDoHV);
+            }
+            tdhocvan.Clear();
             dt = cl.LayThongTinNV1("NV");
             dataGridView1.DataSource = dt;
             btnLuu.Enabled = false;
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            label9.Text = null;
-            lbMaNV.Text = null;
+            label9.Text = "";
+            lbMaNV.Text = "";
+            txtTD.Items.Clear();
+            foreach (var item in hocVanDictionary)
+            {
+                txtTD.Items.Add(item.Key);
+            }
             PhanQuyen(quyenhan);
         }
         private int catchuoi(string chuoicat) 
@@ -174,8 +191,10 @@ namespace QuanLyNhanSu.CT
                     gt = "Nữ";
                 if (dem != 0)
                     hinh = @"Hinh/" + txtTen.Text;
+                string selectedValue = txtTD.Text;
+                string selectedKey = hocVanDictionary[selectedValue];
                 dr = cl.SuaThongTinNhanVien(lbMaNV.Text, MaPB1, Convert.ToInt32(txtLuong.Text), txtTen.Text, gt, Convert.ToDateTime(dtpNgaySinh.Text),
-                    txtSoCM.Text, txtDT.Text, txtTD.Text, txtDiaChi.Text, txtEmail.Text, txtHonNhan.Text, hinh);
+                    txtSoCM.Text, txtDT.Text, selectedKey, txtDiaChi.Text, txtEmail.Text, txtHonNhan.Text, hinh);
                 dr = cl.CapNhatMaCvTrongHopDong(mhd, MaCV1);
                 n2 = dateTimePicker1.Value;
                 if(n1 != n2)
@@ -242,6 +261,11 @@ namespace QuanLyNhanSu.CT
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             label9.Text = "Chọn Hình ->";
+        }
+
+        private void txtTD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

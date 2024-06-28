@@ -29,7 +29,6 @@ namespace QuanLyNhanSu.CT
             List<string> nvsArray = new List<string>();
             foreach (DataRow row in nvs.Rows)
             {
-                // Xây dựng chuỗi từ dữ liệu của từng dòng và thêm vào mảng
                 string index = $"{row["TenNV"].ToString()} ({row["MaNhanvien"].ToString()})";
                 nvsArray.Add(index);
             }
